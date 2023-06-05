@@ -8,14 +8,15 @@ def get_datetime(date):
 
 
 def get_strftime(date):
-    """Формат отображения даты для вывода"""
+    """Формат отображения даты для вывода дата.месяц.год"""
     thedate = datetime.fromisoformat(date)
     date_thedate = thedate.strftime("%d.%m.%Y")
     return date_thedate
 
 
 def get_from(from_card):
-    """Формат отображения номера карты / счета"""
+    """Формат отображения номера карты ("MasterCard 6783 91** **** 1847") /
+    счета "Счет **2662" """
     lst_from = from_card.split(" ")
     if len(lst_from) == 2:
         card_number = lst_from[1]
