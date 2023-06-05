@@ -19,7 +19,7 @@ for i in lst_date:
 sorted_lst_datetime = sorted(lst_datetime, reverse=True)
 
 
-# Выбор последнич 5 выполненных (EXECUTED) операций
+# Выбор последних 5 выполненных (EXECUTED) операций
 application = []
 i = 0
 for date in sorted_lst_datetime:
@@ -32,14 +32,13 @@ for date in sorted_lst_datetime:
 
 
 for d in application:
-    if d != {}:
-        if "from" in d:
-            print(f"""{get_strftime(d["date"])} {d["description"]}
+    if "from" in d:
+        print(f"""{get_strftime(d["date"])} {d["description"]}
 {get_from(d["from"])} -> {get_from(d["to"])}
 {d["operationAmount"]["amount"]} {d["operationAmount"]["currency"]["name"]}
 """)
-        else:
-            print(f"""{get_strftime(d["date"])} {d["description"]}
+    else:
+        print(f"""{get_strftime(d["date"])} {d["description"]}
 {get_from(d["to"])}
 {d["operationAmount"]["amount"]} {d["operationAmount"]["currency"]["name"]}
 """)
