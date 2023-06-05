@@ -19,3 +19,10 @@ def test_from_card():
     assert functions.get_from("MasterCard 6783917276771847") == "MasterCard 6783 91** **** 1847"
     assert functions.get_from("Visa Gold 8326537236216459") == "Visa Gold 8326 53** **** 6459"
     assert functions.get_from("МИР 5211277418228469") == "МИР 5211 27** **** 8469"
+
+
+
+def test_from_score():
+    assert functions.get_from("Счет 58518872592028002662") == "Счет **2662"
+    assert functions.get_from("Счет 71687416928274675290") == "Счет **5290"
+    assert functions.get_from("Счет 96527012349577388612") == "Счет **8612"
